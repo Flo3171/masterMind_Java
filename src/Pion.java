@@ -5,11 +5,9 @@ public class Pion {
     }
 
     private Couleur couleur;
-    private int colone;
 
-    public Pion(Couleur couleur, int colone){
+    public Pion(Couleur couleur){
         this.couleur = couleur;
-        this.colone = colone;
     }
 
     public String formate(){
