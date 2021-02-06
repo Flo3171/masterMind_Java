@@ -6,4 +6,12 @@ public class Evaluation {
         this.nbBonneCouleur = nbBonneCouleur;
         this.nbBienPlace = nbBienPlace;
     }
+
+    public String formate(){
+        String retour;
+
+        retour = nbBonneCouleur + " | " + nbBienPlace;
+
+        return retour;
+    }
 }

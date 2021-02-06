@@ -1,7 +1,7 @@
 public class Pion {
 
     public enum Couleur {
-        Rouge, Jaune, Vert, Bleu, Noir, Blanc;  
+        Rouge, Jaune, Vert, Cyan, Noir, Blanc;  
     }
 
     private Couleur couleur;
@@ -13,20 +13,29 @@ public class Pion {
     public String formate(){
         switch (couleur) {
             case Rouge:
-                return "ROUGE";
+                return "Ro";
             case Jaune:
-                return "JAUNE";
+                return "Ja";
             case Vert:
-                return "VERT ";
-            case Bleu:
-                return "BLEU ";
+                return "Ve";
+            case Cyan:
+                return "Cy";
             case Noir:
-                return "NOIR ";
+                return "No";
             case Blanc:
-                return "BLANC";
+                return "Bl";
         
             default:
                 return "     ";
+        }
+    }
+
+    public boolean isEqualTo(Pion pion){
+        if (couleur == pion.couleur){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
