@@ -1,13 +1,19 @@
+
+
 public class Pion {
 
     public enum Couleur {
-        Rouge, Jaune, Vert, Cyan, Noir, Blanc;  
+        Rouge, Jaune, Vert, Cyan, Noir, Blanc, Vide;  
     }
 
     private Couleur couleur;
 
     public Pion(Couleur couleur){
         this.couleur = couleur;
+    }
+
+    public Pion(){
+        this.couleur = aleatoireCouleur();
     }
 
     public String formate(){
@@ -38,6 +44,29 @@ public class Pion {
             return false;
         }
     }
+
+    public static Couleur aleatoireCouleur(){
+        switch (Aleatoire.nbAleatoire(0, 5)) {
+            case 0:
+                return Couleur.Rouge;
+            case 1:
+                return Couleur.Jaune;
+            case 2:
+                return Couleur.Vert;
+            case 3:
+                return Couleur.Cyan;
+            case 4:
+                return Couleur.Noir;
+            case 5:
+                return Couleur.Blanc;
+
+        
+            default:
+                return Couleur.Vide;
+        }
+    }
+
+    
 
 
 

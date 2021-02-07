@@ -1,10 +1,17 @@
-/*import Pion.Couleur;*/
 
 public class Ligne {
     
-    final private int  NB_TROUS_PAR_LINGE = 4;
+    final static int  NB_TROUS_PAR_LINGE = 4;
     private Pion[] trous;
     private Evaluation evaluation;
+
+    public Ligne(){
+        this.trous = new Pion[NB_TROUS_PAR_LINGE];
+        for (int i = 0; i < NB_TROUS_PAR_LINGE; i++) {
+            this.trous[i] = new Pion();
+        }
+        evaluation = new Evaluation(0, 0);
+    }
 
     public Ligne(Pion.Couleur[] couleur){
         this.trous = new Pion[NB_TROUS_PAR_LINGE];
@@ -54,5 +61,15 @@ public class Ligne {
             }
         }
         return false;
+    }
+
+    public boolean isEqualTo(Ligne ligne){
+        boolean retour = true;
+        for (int i = 0; i < NB_TROUS_PAR_LINGE; i++) {
+            if (!(trous[i].isEqualTo(ligne.trous[i]))){
+                retour = false;
+            }
+        }
+        return retour;
     }
 }
